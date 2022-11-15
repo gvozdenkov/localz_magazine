@@ -1,0 +1,16 @@
+.page {
+  font-family: "Golos";
+}
+
+.page_scroll-off {
+  overflow: hidden;
+}
+
+.page__section {
+  min-width: 320px;
+  padding: 0 20px;
+}
+
+.page__section_theme_dark {
+  background-color: #0a0a0a;
+}
