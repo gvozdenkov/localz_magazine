@@ -1,0 +1,17 @@
+.desktop-menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 60px;
+  list-style-type: none;
+  padding: 20px;
+  margin: 0;
+}
+
+.desktop-menu__item {
+}
+
+@media (max-width: 767px) {
+  .desktop-menu {
+    display: none;
+  }
+}
