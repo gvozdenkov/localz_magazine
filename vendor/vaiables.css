@@ -1,0 +1,13 @@
+:root {
+  --color-black: #0a0a0a;
+  --color-white: white;
+
+  --color-content-primary: var(--color-black);
+  --color-content-primary-inverse: var(--color-white);
+  --color-background-primary: var(--color-white);
+  --color-background-primary-inverse: var(--color-black);
+
+  --min-screen-width: 480px;
+  --min-screen: 480;
+  --max-screen: 1440;
+}

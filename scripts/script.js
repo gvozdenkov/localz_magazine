@@ -8,7 +8,7 @@ const openMenuButton = document.querySelector(
 );
 const closeMenuButton = document.querySelector(".menu__close-button");
 const openMobileMenuButton = document.querySelector(
-  ".mobile-header__open-menu-button"
+  ".mobile-menu__open-menu-button"
 );
 const sliderArrowLeft = document.querySelector(
   ".slider-navigation__arrow_left"
@@ -17,6 +17,7 @@ const sliderArrowRight = document.querySelector(
   ".slider-navigation__arrow_right"
 );
 const buttonToNews = document.querySelector(".navigation-button");
+console.log(buttonToNews);
 const menu = document.querySelector(".menu");
 const page = document.querySelector(".page");
 
@@ -68,14 +69,12 @@ openMobileMenuButton.addEventListener("click", toggleMenu);
 closeMenuButton.addEventListener("click", toggleMenu);
 
 const openDropDownMenu = () => {
-  const dropdownMenuNews = document.querySelector(
-    ".navigation__dropdown-menu_click"
-  );
+  const dropdownMenuNews = document.querySelector(".navigation__dropdown-menu");
   const menuItemArrow = document.querySelector(
     ".navigation-button.navigation__button_arrow"
   );
 
-  dropdownMenuNews.classList.toggle("dropdown-menu_click-open");
+  dropdownMenuNews.classList.toggle("dropdown-menu_is-open");
   menuItemArrow.classList.toggle("navigation__button_arrow_up");
 };
 

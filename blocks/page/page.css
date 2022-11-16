@@ -1,16 +1,24 @@
 .page {
   font-family: "Golos";
+  background-color: var(--color-background-primary);
+  color: var(--color-content-primary);
 }
 
-.page_scroll-off {
-  overflow: hidden;
+.page__content {
+  max-width: 1440px;
+  min-width: 480px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .page__section {
-  min-width: 320px;
   padding: 0 20px;
 }
 
 .page__section_theme_dark {
-  background-color: #0a0a0a;
+  background-color: var(--color-background-primary-inverse);
+}
+
+.page_scroll-off {
+  overflow: hidden;
 }
