@@ -1,0 +1,16 @@
+.section-title {
+  font-family: "Neue Machina", Garamond, Times New Roman, Times, serif;
+  font-size: 48px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin: 0;
+  margin-bottom: 40px;
+  color: inherit;
+}
+
+@media (max-width: 767px) {
+  .section-title {
+    margin-bottom: 20px;
+  }
+}

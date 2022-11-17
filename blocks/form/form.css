@@ -1,0 +1,115 @@
+.form {
+  color: var(--color-background-primary-inverse);
+}
+
+.form_type_subscribe {
+  display: grid;
+  grid-template:
+    "input submit"
+    ". ." 16px
+    "agreement agreement"
+    / 334fr 178fr;
+}
+
+.form__input {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-content-primary-inverse);
+  width: 100%;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 0.5px solid #fff;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.form__input_type_subscribe {
+  grid-area: input;
+}
+
+.form__input::placeholder {
+  font-family: "Golos", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #999;
+  text-align: center;
+}
+
+.form__input:focus {
+  outline: none;
+}
+
+.form__submit {
+  font-family: "Neue Machina";
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #0a0a0a;
+  width: 100%;
+  height: 48px;
+  background: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.form__submit_type_subscribe {
+  grid-area: submit;
+}
+
+.form__agreement {
+  display: flex;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+}
+
+.form_agreement_type_subscribe {
+  grid-area: agreement;
+}
+
+.form__agreement-checkbox:checked {
+  color: #fff;
+}
+
+.form__agreement-checkbox {
+  display: none;
+}
+
+.form__agreement-custom-checkbox {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  border-radius: inherit;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.form__agreement-checkbox:checked + .form__agreement-custom-checkbox:after {
+  content: "";
+  position: absolute;
+  background: url("../images/checkbox-arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 8px;
+  top: calc(50% - 4px);
+  left: calc(50% - 6px);
+}
+
+@media (max-width: 992px) {
+  .form_type_subscribe {
+    grid-template:
+      "input"
+      "submit"
+      "." 16px
+      "agreement";
+  }
+}

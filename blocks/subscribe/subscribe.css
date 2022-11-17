@@ -1,0 +1,13 @@
+.subscribe {
+  width: 100%;
+  grid-area: subscribe;
+}
+
+.subscribe__subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: inherit;
+  margin: 0;
+  margin-bottom: 40px;
+}

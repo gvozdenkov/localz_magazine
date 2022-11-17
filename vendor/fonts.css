@@ -1,9 +1,16 @@
 @font-face {
+  font-family: "Golos";
   src: url("../vendor/fonts/Golos-Text/Golos-Text_Regular.woff2")
       format("woff2"),
     url("../vendor/fonts/Golos-Text/Golos-Text_Regular.woff") format("woff");
-  font-family: "Golos";
   font-weight: 400;
+}
+
+@font-face {
+  font-family: "Golos";
+  src: url("../vendor/fonts/Golos-Text/Golos-Text_Medium.woff2") format("woff2"),
+    url("../vendor/fonts/Golos-Text/Golos-Text_Medium.woff") format("woff");
+  font-weight: 600;
 }
 
 @font-face {
@@ -12,5 +19,14 @@
       format("woff2"),
     url("../vendor/fonts/NeueMachina/NeueMachina-Ultrabold.woff") format("woff");
   font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../vendor/fonts/NeueMachina/NeueMachina-Regular.woff2")
+      format("woff2"),
+    url("../vendor/fonts/NeueMachina/NeueMachina-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }

@@ -67,12 +67,6 @@
         </h2>
         <p class="edition header__edition">Выпуск № 06 Июнь 2021</p>
       </header>
-      <div class="sticky-header sticky-header_disable">
-        <button class="menu-button sticky-header__open-menu-button">
-          <span class="menu-button__label">Меню</span>
-          <div class="menu-icon"></div>
-        </button>
-      </div>
       <div class="menu">
         <button class="menu-button menu__close-button">
           <span class="menu-button__label menu-button__label_to-close"
@@ -103,7 +97,76 @@
           </li>
         </ul>
       </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <section class="footer__gallery footer__section">
+          <h2 class="section-title">Instagram</h2>
+          <div class="gallery">
+            <a href="#" class="gallery__image-link">
+              <img
+                src="./images/instagram-img-1.jpg"
+                alt=""
+                class="gallery__image"
+              />
+            </a>
+            <a href="#" class="gallery__image-link">
+              <img
+                src="./images/instagram-img-2.jpg"
+                alt=""
+                class="gallery__image"
+              />
+            </a>
+            <a href="#" class="gallery__image-link">
+              <img
+                src="./images/instagram-img-3.jpg"
+                alt=""
+                class="gallery__image"
+              />
+            </a>
+            <a href="#" class="gallery__image-link">
+              <img
+                src="./images/instagram-img-4.jpg"
+                alt=""
+                class="gallery__image"
+              />
+            </a>
+          </div>
+        </section>
+        <section class="subscribe footer__section">
+          <h2 class="section-title" id="subscribe-title">Подписаться</h2>
+          <p class="subscribe__subtitle">
+            Каждую неделю мы рассылаем дайджест самых интересных новостей
+          </p>
+          <form
+            action="/"
+            class="form form_type_subscribe"
+            aria-labelledby="subscribe-title"
+          >
+            <input
+              type="email"
+              name="email"
+              class="form__input form__input_type_subscribe"
+              placeholder="Укажите свой email"
+            />
+            <button
+              type="submit"
+              class="form__submit form__submit_type_subscribe"
+            >
+              Подписаться
+            </button>
+            <label class="form__agreement form_agreement_type_subscribe">
+              <input type="checkbox" class="form__agreement-checkbox" />
+              <span class="form__agreement-custom-checkbox"></span>
+              Я даю согласие на обработку персональных данных
+            </label>
+          </form>
+        </section>
+        <p class="footer__copyright">2021 © Все права защищены</p>
+      </footer>
     </div>
+
+    <div class="tmp" style="height: 1000px"></div>
     <script src="./scripts/script.js"></script>
   </body>
 </html>
