@@ -1,0 +1,11 @@
+.news {
+  padding: 60px 20px;
+  overflow: hidden;
+}
+
+.news__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}

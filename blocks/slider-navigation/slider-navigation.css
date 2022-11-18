@@ -1,0 +1,20 @@
+.slider-navigation {
+  display: flex;
+  gap: 30px;
+}
+
+.slider-navigation__arrow {
+  width: 24px;
+  height: 24px;
+  background: url("../../images/slider-arrow.svg") center no-repeat;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.slider-navigation__arrow_left {
+}
+
+.slider-navigation__arrow_right {
+  transform: rotate(180deg);
+}

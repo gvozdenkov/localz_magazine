@@ -1,0 +1,15 @@
+.progress-bar {
+  width: calc(100% - var(--side-padding) * 2);
+  height: 4px;
+  background: #ebebeb;
+}
+
+.progress-bar__indicator {
+  height: 4px;
+  background: #292929;
+  width: 0%;
+}
+
+.news__progress-bar {
+  margin: 40px auto 0 auto;
+}

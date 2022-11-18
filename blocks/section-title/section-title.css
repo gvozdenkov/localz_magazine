@@ -9,8 +9,16 @@
   color: inherit;
 }
 
+.news__section-title {
+  margin: 0;
+}
+
 @media (max-width: 767px) {
   .section-title {
     margin-bottom: 20px;
+  }
+
+  .news__section-title {
+    margin-bottom: 0;
   }
 }
