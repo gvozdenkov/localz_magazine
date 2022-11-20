@@ -19,11 +19,11 @@
 
 @import url(../blocks/news/news.css);
 
-@import url(../blocks/slider-navigation/slider-navigation.css);
+@import url(../blocks/slider-nav/slider-nav.css);
 
 @import url(../blocks/progress-bar/progress-bar.css);
 
-@import url(../blocks/slider-content/slider-content.css);
+@import url(../blocks/slider-container/slider-container.css);
 
 @import url(../blocks/card/card.css);
 

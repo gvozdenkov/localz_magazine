@@ -102,18 +102,23 @@
       <section class="news page">
         <header class="news__header">
           <h2 class="section-title news__section-title">Новости</h2>
-          <div class="slider-navigation">
+          <div class="slider-nav">
             <button
-              class="slider-navigation__arrow slider-navigation__arrow_left"
+              class="slider-nav__arrow slider-nav__arrow_dir_left"
             ></button>
             <button
-              class="slider-navigation__arrow slider-navigation__arrow_right"
+              class="slider-nav__arrow slider-nav__arrow_dir_right"
             ></button>
           </div>
         </header>
-        <ul class="slider-content">
+        <ul
+          class="slider-container"
+          role="list"
+          aria-label="Image carousel"
+          tabindex="0"
+        >
           <li class="slider-container__item">
-            <article class="card slider-content__slide">
+            <article class="card slider-container__slide">
               <a href="#" class="card__image-link">
                 <img
                   src="./images/slider-image-1.jpg"
@@ -127,7 +132,7 @@
             </article>
           </li>
           <li class="slider-container__item">
-            <article class="card slider-content__slide">
+            <article class="card slider-container__slide">
               <a href="#" class="card__image-link">
                 <img
                   src="./images/slider-image-2.jpg"
@@ -143,7 +148,7 @@
             </article>
           </li>
           <li class="slider-container__item">
-            <article class="card slider-content__slide">
+            <article class="card slider-container__slide">
               <a href="#" class="card__image-link">
                 <img
                   src="./images/slider-image-3.jpg"
@@ -159,7 +164,7 @@
             </article>
           </li>
           <li class="slider-container__item">
-            <article class="card slider-content__slide">
+            <article class="card slider-container__slide">
               <a href="#" class="card__image-link">
                 <img
                   src="./images/slider-image-4.jpg"
@@ -175,7 +180,7 @@
             </article>
           </li>
           <li class="slider-container__item">
-            <article class="card slider-content__slide">
+            <article class="card slider-container__slide">
               <a href="#" class="card__image-link">
                 <img
                   src="./images/slider-image-5.jpg"

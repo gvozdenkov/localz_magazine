@@ -1,9 +1,9 @@
-.slider-navigation {
+.slider-nav {
   display: flex;
   gap: 30px;
 }
 
-.slider-navigation__arrow {
+.slider-nav__arrow {
   width: 24px;
   height: 24px;
   background: url("../../images/slider-arrow.svg") center no-repeat;
@@ -12,9 +12,9 @@
   padding: 0;
 }
 
-.slider-navigation__arrow_left {
+.slider-nav__arrow_dir_left {
 }
 
-.slider-navigation__arrow_right {
+.slider-nav__arrow_dir_right {
   transform: rotate(180deg);
 }

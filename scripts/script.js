@@ -17,141 +17,52 @@ const sliderArrowRight = document.querySelector(
   ".slider-navigation__arrow_right"
 );
 const buttonToNews = document.querySelector(".navigation-button");
-console.log(buttonToNews);
+
+const sliderContainer = document.querySelector(".slider-container");
+const sliderContainerItem = document.querySelector(".slider-container__item");
+const sliderArrowLeft = document.querySelector(".slider-nav__arrow_dir_left");
+const sliderArrowRight = document.querySelector(".slider-nav__arrow_dir_right");
+const sliderProgress = document.querySelector(".progress-bar");
+const sliderProgressIndicator = document.querySelector(
+  ".progress-bar__indicator"
+);
+
+const card = document.querySelector(".card");
 const menu = document.querySelector(".menu");
 const page = document.querySelector(".page");
 
-const toggleStickyHeader = () => {
-  const isHeaderOutsideOfWindow =
-    window.pageYOffset >= header.clientHeight - stickyHeader.clientHeight;
+// ================= Scroll image gallery =========================================
 
-  if (isHeaderOutsideOfWindow) {
-    stickyHeader.classList.remove("sticky-header_disable");
-  } else {
-    stickyHeader.classList.add("sticky-header_disable");
-  }
+let currentPositionOfScroll = 0;
+let newPositionOfScroll = 0;
+
+const getCardMarginRight = (element) => {
+  const style = window.getComputedStyle(element) || element.currentStyle;
+  return parseInt(style.marginRight.slice(0, -2));
 };
 
-const toggleDesktopMenu = () => {
-  const isMenuInsideOfHeader =
-    window.pageYOffset <= header.clientHeight - stickyHeader.clientHeight;
-
-  if (isMenuInsideOfHeader) {
-    closeMenu();
-  }
+const getCardWidthWithMarginRight = (element) => {
+  return element.clientWidth + getCardMarginRight(element);
 };
 
-window.onscroll = () => {
-  toggleStickyHeader();
-  toggleDesktopMenu();
+const getSliderContainerWidth = (container) => {
+  const containerElement = container.children[0];
+
+  const slideWidth = getCardWidthWithMarginRight(containerElement);
+  const countOfSlides = container.children.length;
+
+  return slideWidth * countOfSlides - getCardMarginRight(containerElement);
 };
 
-const toggleScrollOnMobile = () => {
-  page.classList.toggle("page_scroll-off");
+const getViewportWidth = () => {
+  return document.querySelector(".page").clientWidth;
 };
 
-const toggleMenu = () => {
-  const screenWidth = window.screen.width;
-
-  if (screenWidth < 768) {
-    toggleScrollOnMobile();
-  }
-
-  menu.classList.add("menu_open");
-};
-
-const closeMenu = () => {
-  menu.classList.remove("menu_open");
-};
-
-openMenuButton.addEventListener("click", toggleMenu);
-openMobileMenuButton.addEventListener("click", toggleMenu);
-closeMenuButton.addEventListener("click", toggleMenu);
-
-const openDropDownMenu = () => {
-  const dropdownMenuNews = document.querySelector(".navigation__dropdown-menu");
-  const menuItemArrow = document.querySelector(
-    ".navigation-button.navigation__button_arrow"
-  );
-
-  dropdownMenuNews.classList.toggle("dropdown-menu_is-open");
-  menuItemArrow.classList.toggle("navigation__button_arrow_up");
-};
-
-buttonToNews.addEventListener("click", openDropDownMenu);
-
-const getMarginRightOfElement = (element) => {
-  const slideMargin = window.getComputedStyle(slide).marginRight;
-  const slideMarginWidth = parseInt(slideMargin.slice(0, -2));
-
-  return slideMarginWidth;
-};
-
-const getWidthSlideWithMatgin = () => {
-  const slideWidth = slide.clientWidth;
-  const slideMargin = getMarginRightOfElement(slide);
-
-  const slideWithMarginWidth = slideWidth + slideMargin;
-
-  return slideWithMarginWidth;
-};
-
-const getSliderContentWidth = () => {
-  const slideWidth = slide.clientWidth;
-  const countOfSlides = document.querySelectorAll(".slide").length;
-  const slideMarginWidth = getMarginRightOfElement(slide);
-
-  const sliderContentWidth =
-    (slideWidth + slideMarginWidth) * countOfSlides - slideMarginWidth;
-
-  return sliderContentWidth;
-};
+const slideWidth = getCardWidthWithMarginRight(sliderContainerItem);
+const sliderContainerWidth = getSliderContainerWidth(sliderContainer);
 
 const getEndPositionOfScroll = () => {
-  const sliderContentWidth = getSliderContentWidth();
-
-  const endPositionOfScroll = sliderContentWidth - sliderContainer.clientWidth;
-
-  return endPositionOfScroll;
-};
-
-const getNewPositionOfScrollRight = () => {
-  const endPositionOfScroll = getEndPositionOfScroll();
-  const slideWithMarginWidth = getWidthSlideWithMatgin();
-  const positionOfScrollBeforeLastSlide =
-    endPositionOfScroll - slideWithMarginWidth;
-
-  if (currentPositionOfScroll <= positionOfScrollBeforeLastSlide) {
-    newPositionOfScroll = currentPositionOfScroll + slideWithMarginWidth;
-  } else if (currentPositionOfScroll === endPositionOfScroll) {
-    newPositionOfScroll = 0;
-  } else {
-    newPositionOfScroll = endPositionOfScroll;
-  }
-
-  return newPositionOfScroll;
-};
-
-const getNewPositionOfScrollLeft = () => {
-  const endPositionOfScroll = getEndPositionOfScroll();
-  const slideWithMarginWidth = getWidthSlideWithMatgin();
-
-  if (currentPositionOfScroll > slideWithMarginWidth) {
-    newPositionOfScroll = currentPositionOfScroll - slideWithMarginWidth;
-  } else if (currentPositionOfScroll === 0) {
-    newPositionOfScroll = endPositionOfScroll;
-  } else {
-    newPositionOfScroll = 0;
-  }
-
-  return newPositionOfScroll;
-};
-
-const changeIndicator = (currentPositionOfScroll) => {
-  const endPositionOfScroll = getEndPositionOfScroll();
-
-  var scrolled = (currentPositionOfScroll / endPositionOfScroll) * 100;
-  document.getElementById("indicator").style.width = scrolled + "%";
+  return getSliderContainerWidth(sliderContainer) - sliderContainer.clientWidth;
 };
 
 const scrollSlider = (positionOfScroll) => {
@@ -160,22 +71,45 @@ const scrollSlider = (positionOfScroll) => {
     behavior: "smooth",
   });
 
-  currentPositionOfScroll = newPositionOfScroll;
+  currentPositionOfScroll = positionOfScroll;
 };
 
-const scrollRight = () => {
+const getNewPositionOfScrollRight = () => {
+  const newPositionOfScroll = currentPositionOfScroll + slideWidth;
+
+  return newPositionOfScroll > sliderContainerWidth - slideWidth
+    ? currentPositionOfScroll
+    : newPositionOfScroll;
+};
+
+const getNewPositionOfScrollLeft = () => {
+  const newPositionOfScroll = currentPositionOfScroll - slideWidth;
+
+  return newPositionOfScroll <= 0 ? 0 : newPositionOfScroll;
+};
+
+// const scrolled = sliderContainerWidth / ;
+const updateProgressBar = (currentPositionOfScroll) => {
+  const endPositionOfScroll = getEndPositionOfScroll();
+  const visiblePartOfGallary =
+    (currentPositionOfScroll / endPositionOfScroll) * 100;
+  const scrolled = (sliderProgress.clientWidth * visiblePartOfGallary) / 100;
+
+  document.querySelector(".progress-bar__indicator").style.width =
+    scrolled + "px";
+};
+
+const handleScrollRight = () => {
   newPositionOfScroll = getNewPositionOfScrollRight();
-
   scrollSlider(newPositionOfScroll);
-  changeIndicator(newPositionOfScroll);
+  updateProgressBar(newPositionOfScroll);
 };
 
-const scrollLeft = () => {
+const handleScrollLeft = () => {
   newPositionOfScroll = getNewPositionOfScrollLeft();
-
   scrollSlider(newPositionOfScroll);
-  changeIndicator(newPositionOfScroll);
+  updateProgressBar(newPositionOfScroll);
 };
 
-sliderArrowLeft.addEventListener("click", scrollLeft);
-sliderArrowRight.addEventListener("click", scrollLeft);
+sliderArrowRight.addEventListener("click", handleScrollRight);
+sliderArrowLeft.addEventListener("click", handleScrollLeft);

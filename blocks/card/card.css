@@ -78,7 +78,7 @@
 }
 
 /* make every 2nd image not square */
-.slider-content .slider-container__item:nth-child(2n) .card__image-link {
+.slider-container .slider-container__item:nth-child(2n) .card__image-link {
   aspect-ratio: 1 / 1.33;
 }
 
