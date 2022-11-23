@@ -55,6 +55,7 @@
   letter-spacing: 1px;
   color: var(--color-content-primary-inverse);
   text-transform: uppercase;
+  text-align: center;
   user-select: none;
   z-index: 1;
   opacity: 0;

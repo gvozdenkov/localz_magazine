@@ -64,6 +64,7 @@
 
 .form__agreement {
   display: flex;
+  gap: 10px;
   font-size: 16px;
   line-height: 24px;
   color: #fff;
@@ -87,15 +88,15 @@
   height: 20px;
   border: 2px solid #fff;
   box-sizing: border-box;
-  border-radius: inherit;
   margin: 0;
-  margin-right: 10px;
+  flex: 0 0 auto;
+  cursor: pointer;
 }
 
 .form__agreement-checkbox:checked + .form__agreement-custom-checkbox:after {
   content: "";
   position: absolute;
-  background: url("../images/checkbox-arrow.svg");
+  background: url("../../images/checkbox-arrow.svg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 12px;
@@ -111,5 +112,10 @@
       "submit"
       "." 16px
       "agreement";
+  }
+
+  .form__input {
+    padding: 12px 0;
+    text-align: center;
   }
 }
