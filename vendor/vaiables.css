@@ -10,4 +10,7 @@
   --min-screen-width: 480px;
   --min-screen: 480;
   --max-screen: 1440;
+
+  --side-padding: 20px;
+  --dropdown-menu-arrow-width: 34px;
 }

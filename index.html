@@ -10,93 +10,44 @@
   <body class="page">
     <div class="page__content">
       <header class="header">
-        <nav>
-          <ul class="desktop-menu">
-            <li class="desktop-menu__item desktop-menu__item_show-dropdown">
-              <span class="navigation__button navigation__button_arrow">
-                Новости
-              </span>
-              <ul
-                class="dropdown-menu navigation__dropdown-menu navigation__dropdown-menu_hover"
+        <!-- Nav -->
+        <nav class="navbar">
+          <ul class="menu">
+            <li class="menu__item menu__item_type_dropdown">
+              <a
+                href="#"
+                data-path="news"
+                class="menu__link menu__link_type_dropdwon"
+                >Новости</a
               >
-                <a href="#" class="dropdown-menu__link">Музыка</a>
-                <a href="#" class="dropdown-menu__link">События</a>
-                <a href="#" class="dropdown-menu__link">Мода</a>
+              <ul data-target="news" class="dropdown-menu">
+                <li class="dropdown-menu__item">
+                  <a href="" class="dropdown-menu__link">Музыка</a>
+                </li>
+                <li class="dropdown-menu__item">
+                  <a href="" class="dropdown-menu__link">События</a>
+                </li>
+                <li class="dropdown-menu__item">
+                  <a href="" class="dropdown-menu__link">Мода</a>
+                </li>
               </ul>
             </li>
-            <li class="desktop-menu__item">
-              <a href="#" class="navigation__link">Контакты</a>
+            <li class="menu__item">
+              <a href="#" data-path="contacts" class="menu__link">Контакты</a>
             </li>
-            <li class="desktop-menu__item">
-              <a href="#" class="navigation__link">Подписаться</a>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Подписаться</a>
             </li>
           </ul>
+          <button class="hamburger">Меню</button>
         </nav>
-        <div class="mobile-menu" id="mobile-menu">
-          <button class="menu-button mobile-menu__open-menu-button">
-            Меню
-            <svg
-              class="menu-icon"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M3 12H23"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M1 6H21"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M1 18H21"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
+
         <h1 class="title header__title">LOCAL-Z</h1>
         <h2 class="title header__description">
           Диджитал-зин об актуальных трендах самого свободного поколения
         </h2>
         <p class="edition header__edition">Выпуск № 06 Июнь 2021</p>
       </header>
-      <div class="menu">
-        <button class="menu-button menu__close-button">
-          <span class="menu-button__label menu-button__label_to-close"
-            >Закрыть</span
-          >
-          <div class="menu-icon menu-icon_close"></div>
-        </button>
-        <ul class="navigation menu__navigation">
-          <li
-            class="navigation-button navigation__item navigation__item_vertical"
-          >
-            <div class="navigation__button navigation__button_arrow">
-              Новости
-            </div>
-            <nav
-              class="dropdown-menu navigation__dropdown-menu navigation__dropdown-menu_click"
-            >
-              <a href="#" class="dropdown-menu__link">Музыка</a>
-              <a href="#" class="dropdown-menu__link">События</a>
-              <a href="#" class="dropdown-menu__link">Мода</a>
-            </nav>
-          </li>
-          <li class="navigation__item navigation__item_vertical">
-            <a href="#" class="navigation__link">Контакты</a>
-          </li>
-          <li class="navigation__item navigation__item_vertical">
-            <a href="#" class="navigation__link">Подписаться</a>
-          </li>
-        </ul>
-      </div>
 
       <!-- News -->
       <section class="news page">

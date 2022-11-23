@@ -9,6 +9,7 @@
   min-width: 480px;
   margin: 0 auto;
   box-sizing: border-box;
+  position: relative;
 }
 
 .page__section {

@@ -32,10 +32,10 @@
   margin-left: clamp(20px, 15vw, 198px);
 }
 
-@media (max-width: 1430px) {
+@media (max-width: 1439px) {
   .header__title {
     font-size: calc(
-      92px + 211 *
+      92px + 205 *
         (
           (100vw - var(--min-screen-width)) /
             (var(--max-screen) - var(--min-screen))

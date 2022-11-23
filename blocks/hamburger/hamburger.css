@@ -1,0 +1,41 @@
+.hamburger {
+  display: none;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 20;
+  gap: 20px;
+  font-size: 20px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--color-content-primary-inverse);
+}
+
+.hamburger::after {
+  content: "";
+  background: url(../../images/menu-icon.svg) center / contain no-repeat;
+  width: 24px;
+  height: 24px;
+}
+
+.hamburger.hamburger_opened::after {
+  background: url(../../images/icon-close.svg) center / contain no-repeat;
+}
+
+.hamburger.hamburger_opened {
+  gap: 16px;
+  position: fixed;
+  top: 20px;
+}
+
+.hamburger_sticky {
+  display: flex;
+  color: black;
+}
+
+@media (max-width: 767px) {
+  .hamburger {
+    display: flex;
+  }
+}

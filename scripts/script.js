@@ -1,21 +1,8 @@
 const header = document.querySelector(".header");
 const stickyHeader = document.querySelector(".sticky-header");
-let currentPositionOfScroll = 0;
-const slide = document.querySelector(".slide");
-const sliderContainer = document.querySelector(".slider-content");
-const openMenuButton = document.querySelector(
-  ".sticky-header__open-menu-button"
-);
+const openMenuButton = document.querySelector(".sticky-header__open-menu-btn");
+const openMobileMenuButton = document.querySelector(".mobile-menu__open-btn");
 const closeMenuButton = document.querySelector(".menu__close-button");
-const openMobileMenuButton = document.querySelector(
-  ".mobile-menu__open-menu-button"
-);
-const sliderArrowLeft = document.querySelector(
-  ".slider-navigation__arrow_left"
-);
-const sliderArrowRight = document.querySelector(
-  ".slider-navigation__arrow_right"
-);
 const buttonToNews = document.querySelector(".navigation-button");
 
 const sliderContainer = document.querySelector(".slider-container");
@@ -30,6 +17,52 @@ const sliderProgressIndicator = document.querySelector(
 const card = document.querySelector(".card");
 const menu = document.querySelector(".menu");
 const page = document.querySelector(".page");
+
+// ================= Burger menu ================================================
+
+const burgerMenuButton = document.querySelector(".hamburger");
+
+const toggleBurgerMenuClose = () => {
+  burgerMenuButton.firstChild.data === "Меню"
+    ? (burgerMenuButton.firstChild.data = "Закрыть")
+    : (burgerMenuButton.firstChild.data = "Меню");
+
+  burgerMenuButton.classList.toggle("hamburger_opened");
+};
+
+burgerMenuButton.addEventListener("click", () => {
+  toggleBurgerMenuClose();
+  menu.classList.toggle("menu_hamburger");
+});
+
+// ================= Dropdown Menu ================================================
+let intervalId;
+
+const dropdownButtons = document.querySelectorAll(".menu__link_type_dropdwon");
+
+dropdownButtons.forEach((evt) => {
+  evt.addEventListener("click", (evt) => {
+    const menu = evt.currentTarget.dataset.path;
+    const menus = document.querySelectorAll(".dropdown-menu");
+    menus.forEach((evt) => {
+      const currentDropdown = document.querySelector(`[data-target=${menu}]`);
+      if (!currentDropdown.classList.contains("open")) {
+        currentDropdown.classList.add("dropdown-menu_is-open");
+        intervalId = setTimeout(() => {
+          currentDropdown.classList.add("open");
+        }, 0);
+      }
+
+      if (currentDropdown.classList.contains("open")) {
+        clearTimeout(intervalId);
+        currentDropdown.classList.remove("dropdown-menu_is-open");
+        intervalId = setTimeout(() => {
+          currentDropdown.classList.remove("open");
+        }, 0);
+      }
+    });
+  });
+});
 
 // ================= Scroll image gallery =========================================
 
@@ -88,7 +121,6 @@ const getNewPositionOfScrollLeft = () => {
   return newPositionOfScroll <= 0 ? 0 : newPositionOfScroll;
 };
 
-// const scrolled = sliderContainerWidth / ;
 const updateProgressBar = (currentPositionOfScroll) => {
   const endPositionOfScroll = getEndPositionOfScroll();
   const visiblePartOfGallary =

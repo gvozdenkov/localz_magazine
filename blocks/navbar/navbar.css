@@ -1,0 +1,10 @@
+.navbar {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  min-height: 24px;
+  transition: 1s ease-in-out;
+}
